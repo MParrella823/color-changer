@@ -7,3 +7,13 @@ Button {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 1px;  
 }
+
+Button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+  Button:hover {
+    background-color: darkgreen; /* Green */
+   
+  }
