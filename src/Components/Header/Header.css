@@ -1,0 +1,13 @@
+#headerSpan {
+    padding: 15px auto;
+    background-color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    height: 69px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    text-align: center;
+    
+}
