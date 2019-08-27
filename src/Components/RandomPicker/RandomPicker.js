@@ -94,7 +94,7 @@ export class RandomPicker extends React.Component {
                     <Button className="removeLast" buttonText="Remove Last" onClick={this.removeLast} />
                 </div>
                 <h2>{this.state.colors.length} Saved Colors:</h2>
-                <div id="listContainer">               
+                <div id="containerDiv">               
                     <ColorList colors={this.state.colors}/>
                 </div>      
             </div>

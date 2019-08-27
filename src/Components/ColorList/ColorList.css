@@ -1,0 +1,14 @@
+#listContainer {
+    margin-top: 15px;
+    border: 2px solid black;
+    width: 150px;
+    background-color: white;
+    overflow: scroll;
+    height: 200px;
+}
+
+li {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px;
+    
+}
