@@ -76,7 +76,8 @@ export class RandomPicker extends React.Component {
             toast.success("Color added!", {
                 position: toast.POSITION.BOTTOM_CENTER,
                 autoClose: 1500,
-                hideProgressBar: true
+                hideProgressBar: true,
+                className: "toastr-success"
             });
         }       
     }
@@ -89,7 +90,8 @@ export class RandomPicker extends React.Component {
         toast.info("List cleared!", {
             position: toast.POSITION.BOTTOM_CENTER,
             autoClose: 1500,
-            hideProgressBar: true
+            hideProgressBar: true,
+            className: "toastr-info"
         })
     }
 
@@ -102,7 +104,8 @@ export class RandomPicker extends React.Component {
       toast.error("Color removed!", {
           position:toast.POSITION.BOTTOM_CENTER,
           autoClose: 1500,
-          hideProgressBar: true,          
+          hideProgressBar: true,
+          className: "toastr-error"          
       })
     }   
 
