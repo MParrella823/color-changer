@@ -2,6 +2,8 @@ import React from 'react';
 import  Button  from '../Button/Button';
 import './RandomPicker.css';
 import { ColorList } from '../ColorList/ColorList';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export class RandomPicker extends React.Component {
 
@@ -62,8 +64,13 @@ export class RandomPicker extends React.Component {
         }
         if (!duplicate){
             this.setState({
-                colors: this.state.colors.concat(this.formatColor(this.state.color))
-            }); 
+                colors: this.state.colors.concat(this.formatColor(this.state.color))                
+            });
+            toast.success("Color added!", {
+                position: toast.POSITION.BOTTOM_CENTER,
+                autoClose: 1500,
+                hideProgressBar: true
+            });
         }       
     }
 
@@ -72,6 +79,11 @@ export class RandomPicker extends React.Component {
         this.setState({
             colors: []
         });
+        toast.info("List cleared!", {
+            position: toast.POSITION.BOTTOM_CENTER,
+            autoClose: 1500,
+            hideProgressBar: true
+        })
     }
 
     /* Will remove the last color added to the list */
@@ -79,6 +91,11 @@ export class RandomPicker extends React.Component {
       let newColors = this.state.colors.filter(color => color !== this.state.colors[this.state.colors.length-1]);
       this.setState({
           colors: newColors
+      })
+      toast.error("Color removed!", {
+          position:toast.POSITION.BOTTOM_CENTER,
+          autoClose: 1500,
+          hideProgressBar: true,          
       })
     }   
 
@@ -95,6 +112,7 @@ export class RandomPicker extends React.Component {
                 <h2>{this.state.colors.length} Saved Colors:</h2>
                 <div id="containerDiv">               
                     <ColorList colors={this.state.colors}/>
+                    <ToastContainer />
                 </div>      
             </div>
         );

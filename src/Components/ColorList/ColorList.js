@@ -6,7 +6,7 @@ export class ColorList extends React.Component{
         return (          
             <div id="listContainer">                
                 <ul>
-                  {this.props.colors.map((color) => <li key={color}>{color}</li>)}
+                  {this.props.colors.map((color) => <li key={color}>{color} <div class="sampleColor" style={{backgroundColor: color}}></div></li>)}
                 </ul>
             </div>            
             );

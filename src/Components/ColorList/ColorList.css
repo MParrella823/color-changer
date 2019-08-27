@@ -1,7 +1,7 @@
 #listContainer {
     margin-top: 15px;
     border: 2px solid black;
-    width: 150px;
+    width: 200px;
     background-color: white;
     overflow: scroll;
     height: 200px;
@@ -11,4 +11,11 @@ li {
     font-family: 'Courier New', Courier, monospace;
     margin: 5px;
     
+}
+
+.sampleColor {
+    border: 1px solid black;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
 }
