@@ -16,3 +16,17 @@ Button {
   Button:hover {
     background-color: darkgreen; /* Green */
   }
+
+  .listButton:hover {
+    background-color: limegreen;
+  }
+
+  .removeLast:hover {
+    background-color: red;
+    color: black;
+  }
+
+  .clearButton:hover {
+    background-color: red;
+    color: black;
+  }

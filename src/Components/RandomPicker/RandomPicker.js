@@ -1,15 +1,20 @@
 import React from 'react';
 import  Button  from '../Button/Button';
 import './RandomPicker.css';
+import { ColorList } from '../ColorList/ColorList';
 
 export class RandomPicker extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
-            color: ['A','B', 'C', 1, 2, 3]
+            color: ['A','B', 'C', 1, 2, 3],
+            colors: [],
         };
         this.handleClick = this.handleClick.bind(this);  
+        this.addColor = this.addColor.bind(this);
+        this.clearList = this.clearList.bind(this);
+        this.removeLast = this.removeLast.bind(this);
     }
 
     generateColor() {
@@ -44,11 +49,52 @@ export class RandomPicker extends React.Component {
         });
     }
 
+    addColor(){
+        let duplicate = false;
+        if (this.state.colors.length > 0){
+            for(let i = 0; i < this.state.colors.length; i ++){
+                if (this.formatColor(this.state.color) === this.state.colors[i])
+                    duplicate = true;
+            }
+
+        }
+        if (!duplicate){
+            this.setState({
+                colors: this.state.colors.concat(this.formatColor(this.state.color))
+            }); 
+        }       
+    }
+
+    clearList(){
+        this.setState({
+            colors: []
+        });
+    }
+
+    removeLast(){
+      let newColors = this.state.colors.filter(color => color !== this.state.colors[this.state.colors.length-1]);
+      this.setState({
+          colors: newColors
+      })
+    }
+  
+
+    
+
     render(){
         return (
             <div id="content">
-                <h1>Current color: {this.formatColor(this.state.color)}</h1>                
-                <Button onClick={this.handleClick} buttonText="Generate Color!"/>
+                <h1>Current color: {this.formatColor(this.state.color)}</h1>
+                <div id="buttonContainer">           
+                    <Button onClick={this.handleClick} buttonText="Generate Color!"/>
+                    <Button className="listButton" buttonText="Add to List" onClick={this.addColor} />
+                    <Button className="clearButton" buttonText="Clear List" onClick={this.clearList} />
+                    <Button className="removeLast" buttonText="Remove Last" onClick={this.removeLast} />
+                </div>
+                <h2>{this.state.colors.length} Saved Colors:</h2>
+                <div id="listContainer">               
+                    <ColorList colors={this.state.colors}/>
+                </div>      
             </div>
         );
     }
