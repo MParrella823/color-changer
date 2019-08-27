@@ -1,13 +1,7 @@
 import React from 'react';
 
 export class ColorList extends React.Component{
-    removeColor(){
-        console.log('called!'); 
-        this.props.colors.pop();
-    }
-    
     render() {     
-        
         return (          
             <div>                
                 <ul>
@@ -15,6 +9,5 @@ export class ColorList extends React.Component{
                 </ul>
             </div>            
             );
-        }
-     
+        }     
 }

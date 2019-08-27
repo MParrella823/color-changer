@@ -42,21 +42,24 @@ export class RandomPicker extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         this.applyColor();
       }
-
+    
+    /* Generates random background color */
     handleClick(){
         this.setState({
             color: this.generateColor()           
         });
     }
 
+    /* Will first check if color was already added to list, to prevent duplicates,
+            if it wasn't, it will add the current color to the list */
     addColor(){
+        
         let duplicate = false;
         if (this.state.colors.length > 0){
             for(let i = 0; i < this.state.colors.length; i ++){
                 if (this.formatColor(this.state.color) === this.state.colors[i])
                     duplicate = true;
             }
-
         }
         if (!duplicate){
             this.setState({
@@ -65,21 +68,20 @@ export class RandomPicker extends React.Component {
         }       
     }
 
+    /* Will clear the current list of saved colors */
     clearList(){
         this.setState({
             colors: []
         });
     }
 
+    /* Will remove the last color added to the list */
     removeLast(){
       let newColors = this.state.colors.filter(color => color !== this.state.colors[this.state.colors.length-1]);
       this.setState({
           colors: newColors
       })
-    }
-  
-
-    
+    }   
 
     render(){
         return (
