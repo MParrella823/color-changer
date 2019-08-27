@@ -1,3 +1,10 @@
+/* RandomPicker.js
+ *
+ * Created By: Matt Parrella
+ * Date: August 2019
+ * Purpose: Used to render the random color generator buttons and saved Color List component
+ */
+
 import React from 'react';
 import  Button  from '../Button/Button';
 import './RandomPicker.css';
