@@ -1,11 +1,12 @@
 import React from 'react';
 import './Button.css';
-export class Button extends React.Component{
-    render() {
+const Button = (props) => {   
         return (
-        <button onClick={this.props.onClick}>
-            Generate Color!
-        </button>);
+            <button 
+            className={props.className}
+            onClick={props.onClick}>
+                {props.buttonText}
+            </button>
+        )}
 
-    }
-}
+export default Button;

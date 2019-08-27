@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../Button/Button';
+import  Button  from '../Button/Button';
 import './RandomPicker.css';
 
 export class RandomPicker extends React.Component {
@@ -48,7 +48,7 @@ export class RandomPicker extends React.Component {
         return (
             <div id="content">
                 <h1>Current color: {this.formatColor(this.state.color)}</h1>                
-                <Button onClick={this.handleClick} />
+                <Button onClick={this.handleClick} buttonText="Generate Color!"/>
             </div>
         );
     }
