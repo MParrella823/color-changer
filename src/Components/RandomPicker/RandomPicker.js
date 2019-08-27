@@ -52,8 +52,7 @@ export class RandomPicker extends React.Component {
 
     /* Will first check if color was already added to list, to prevent duplicates,
             if it wasn't, it will add the current color to the list */
-    addColor(){
-        
+    addColor(){        
         let duplicate = false;
         if (this.state.colors.length > 0){
             for(let i = 0; i < this.state.colors.length; i ++){
